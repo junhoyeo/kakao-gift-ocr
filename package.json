@@ -12,5 +12,8 @@
   "license": "MIT",
   "devDependencies": {
     "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "tesseract.js": "^2.0.2"
   }
 }
