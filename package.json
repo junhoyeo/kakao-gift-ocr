@@ -1,6 +1,6 @@
 {
   "name": "kakao-gift-card",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "OCR library for Kakao Gift Card",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -20,6 +20,7 @@
     "tesseract.js": "^2.0.2"
   },
   "files": [
-    "./data/lang-data/"
+    "data/lang-data/kor.traineddata.gz",
+    "dist/*"
   ]
 }
