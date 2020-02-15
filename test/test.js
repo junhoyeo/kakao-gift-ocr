@@ -1,13 +1,13 @@
 'use strict';
 const fs = require('fs');
 const expect = require('chai').expect;
-const kakaoGiftCard = require('../dist/index.js');
+const KakaoGiftOCR = require('../dist/index.js');
 
 describe('getInfo function test', () => {
   it('should return giftCard information', async function() {
     this.timeout('25s');
 
-    const giftCardParser = new kakaoGiftCard.default();
+    const giftCardParser = new KakaoGiftOCR.default();
     await giftCardParser.Ready;
 
     const chickenGiftCard = fs.readFileSync('./test/chicken.jpeg');

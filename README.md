@@ -1,4 +1,4 @@
-# kakao-gift-card
+# kakao-gift-ocr
 OCR library for parsing data in Kakao Gift Cards
 
 <img src="./test/chicken.jpeg" width="256px"> <img src="./docs/assets/output.png" height="256px">
@@ -6,21 +6,21 @@ OCR library for parsing data in Kakao Gift Cards
 ## 📦 Installation
 
 ```bash
-npm install kakao-gift-card
+npm install kakao-gift-ocr
 # Or using yarn
-yarn add kakao-gift-card
+yarn add kakao-gift-ocr
 ```
 
 ## 🔥 Action
 
 ```typescript
-import KakaoGiftCard from 'kakao-gift-card';
+import KakaoGiftOCR from 'kakao-gift-ocr';
 const fs = require('fs');
 
 const ignoreLogs = () => {};
 
 (async () => {
-  const giftCardParser = new kakaoGiftCard(ignoreLogs);
+  const giftCardParser = new KakaoGiftOCR(ignoreLogs);
   await giftCardParser.Ready;
 
   const chickenGiftCard = fs.readFileSync('./test/chicken.jpeg');
