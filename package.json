@@ -12,6 +12,7 @@
   "author": "JunhoYeo <32605822+JunhoYeo@users.noreply.github.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^13.7.1",
     "chai": "^4.2.0",
     "mocha": "^7.0.1",
     "typescript": "^3.7.5"
