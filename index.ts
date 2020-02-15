@@ -14,8 +14,8 @@ export default class giftCardParser {
   public Ready: Promise<void>;
 
   constructor (
-    langPath: string = defaults.langPath,
     logger: (message: string) => void = defaults.logger,
+    langPath: string = defaults.langPath,
   ) {
     this.worker = createWorker({
       langPath,
