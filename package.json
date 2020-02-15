@@ -1,0 +1,16 @@
+{
+  "name": "kakao-gift-card",
+  "version": "0.0.1",
+  "description": "OCR library for Kakao Gift Card",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": "https://github.com/junhoyeo/kakao-gift-card",
+  "author": "JunhoYeo <32605822+JunhoYeo@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.7.5"
+  }
+}
