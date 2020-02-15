@@ -1,11 +1,13 @@
-const path = require('path');
-
 import { Worker, ImageLike, createWorker } from 'tesseract.js';
 
-const defaults = {
-  langPath: path.join(__dirname, '../data', 'lang-data'),
-  logger: (message: string) => console.log(message),
-};
+import defaults from './lib/defaults';
+import { IGiftCard, createGiftCard } from './lib/models';
+import {
+  regexAboutWhitespace,
+  regexAboutFormattedDate,
+  regexAboutLongNumber,
+} from './lib/regex';
+import { matchString } from './lib/utils';
 
 export default class giftCardParser {
   private worker: Worker;
@@ -22,37 +24,31 @@ export default class giftCardParser {
     this.Ready = this.initialize();
   }
 
-  private async initialize() {
+  private async initialize(): Promise<void> {
     await this.worker.load();
     await this.worker.loadLanguage('kor');
     await this.worker.initialize('kor');
   }
 
-  private matchString(string: string, regex: RegExp) {
-    const matches = string.match(regex);
-    if (matches) {
-      return matches[0];
-    }
-    return '';
-  }
-
-  public async getInfo(image: ImageLike) {
+  public async getInfo(image: ImageLike): Promise<IGiftCard> {
     const { data: { text } } = await this.worker.recognize(image);
 
-    const lines = text.split('\n')
+    const textLines = text.split('\n')
       .filter((line: string) => line)
-      .map((line: string) => line.replace(/\s/g, ''));
-    const exchangerIndex = lines.findIndex((line) => line.includes('교환처'));
+      .map((line: string) => line.replace(regexAboutWhitespace, ''));
+    const exchangerIndex = textLines
+      .findIndex((line) => line.includes('교환처'));
 
-    const barcode = parseInt(lines[exchangerIndex - 1]);
-    const product = lines[exchangerIndex - 2];
+    const barcode = textLines[exchangerIndex - 1];
+    const product = textLines[exchangerIndex - 2];
 
-    const date = new Date(this.matchString(text, /(\d{4}\.\d{2}\.\d{2})/g));
-    const order = parseInt(this.matchString(text, /(\d){8,}\w+/g));
-    return ({ product, barcode, date, order });
+    const date = matchString(text, regexAboutFormattedDate);
+    const order = matchString(text, regexAboutLongNumber);
+
+    return createGiftCard({ product, barcode, date, order });
   };
 
-  public async terminate() {
+  public async terminate(): Promise<void> {
     await this.worker.terminate();
   }
 }
