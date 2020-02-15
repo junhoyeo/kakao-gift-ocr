@@ -1,8 +1,7 @@
 # kakao-gift-card
 OCR library for parsing data in Kakao Gift Cards
 
-<img src="./test/chicken.jpeg" width="256px">
-<img src="./docs/assets/output.png" height="365px">
+<img src="./test/chicken.jpeg" width="256px"> <img src="./docs/assets/output.png" height="256px">
 
 ## 📦 Installation
 
