@@ -1,5 +1,5 @@
 {
-  "name": "kakao-gift-card",
+  "name": "kakao-gift-ocr",
   "version": "1.0.0",
   "description": "OCR library for Kakao Gift Card",
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
     "test": "mocha --reporter spec"
   },
   "repository": "https://github.com/junhoyeo/kakao-gift-card",
-  "author": "JunhoYeo <32605822+JunhoYeo@users.noreply.github.com>",
+  "author": "JunhoYeo <hanaro0704@naver.com>",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^13.7.1",
