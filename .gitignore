@@ -1,6 +1,5 @@
 .DS_Store
 *.traineddata
-*.jpeg
 
 # Logs
 logs

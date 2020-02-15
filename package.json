@@ -5,15 +5,21 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "mocha --reporter spec"
   },
   "repository": "https://github.com/junhoyeo/kakao-gift-card",
   "author": "JunhoYeo <32605822+JunhoYeo@users.noreply.github.com>",
   "license": "MIT",
   "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.0.1",
     "typescript": "^3.7.5"
   },
   "dependencies": {
     "tesseract.js": "^2.0.2"
-  }
+  },
+  "files": [
+    "./data/lang-data/"
+  ]
 }
