@@ -1,5 +1,4 @@
-import { Worker, ImageLike, createWorker } from 'tesseract.js';
-
+import { Worker, ImageLike, createWorker } from './lib/Tesseract';
 import defaults from './lib/defaults';
 import { IGiftCard, createGiftCard } from './lib/models';
 import {
