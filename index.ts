@@ -41,10 +41,10 @@ export default class giftCardParser {
     const barcode = textLines[exchangerIndex - 1];
     const product = textLines[exchangerIndex - 2];
 
-    const date = matchString(text, regexAboutFormattedDate);
+    const dueDate = matchString(text, regexAboutFormattedDate);
     const order = matchString(text, regexAboutLongNumber);
 
-    return createGiftCard({ product, barcode, date, order });
+    return createGiftCard({ product, barcode, dueDate, order });
   };
 
   public async terminate(): Promise<void> {

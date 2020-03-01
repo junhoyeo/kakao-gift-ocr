@@ -1,24 +1,24 @@
 export interface IGiftCardPayload {
   product: string;
   barcode: string;
-  date: string;
+  dueDate: string;
   order: string;
 }
 
 export interface IGiftCard {
   product: string;
   barcode: string;
-  date: Date;
+  dueDate: Date;
   order: string;
 }
 
 export function createGiftCard({
-  product, barcode, date, order,
+  product, barcode, dueDate, order,
 }: IGiftCardPayload) {
   return {
     product,
     barcode,
-    date: new Date(date),
+    dueDate: new Date(dueDate),
     order,
   };
 }

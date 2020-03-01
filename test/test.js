@@ -14,12 +14,12 @@ describe('getInfo function test', () => {
     const giftCard = await giftCardParser.getInfo(chickenGiftCard);
 
     console.log(giftCard);
-    const { product, barcode, date, order } = giftCard;
+    const { product, barcode, dueDate, order } = giftCard;
 
     expect(product).to.include('순살뿌링클+콜라');
     expect(barcode).to.equal('111420582002');
     expect(order).to.equal('570993632');
-    expect(date.getTime()).to
+    expect(dueDate.getTime()).to
       .equal(new Date('2019.06.11').getTime());
 
     await giftCardParser.terminate();
