@@ -1,6 +1,6 @@
 {
   "name": "kakao-gift-ocr",
-  "version": "1.0.2-beta.2",
+  "version": "1.0.3",
   "description": "OCR library for Kakao Gift Card",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
