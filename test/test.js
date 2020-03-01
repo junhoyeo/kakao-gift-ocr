@@ -17,8 +17,8 @@ describe('getInfo function test', () => {
     const { product, barcode, date, order } = giftCard;
 
     expect(product).to.include('순살뿌링클+콜라');
-    expect(barcode).to.equal(111420582002);
-    expect(order).to.equal(570993632);
+    expect(barcode).to.equal('111420582002');
+    expect(order).to.equal('570993632');
     expect(date.getTime()).to
       .equal(new Date('2019.06.11').getTime());
 

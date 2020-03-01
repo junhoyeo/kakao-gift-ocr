@@ -7,9 +7,9 @@ export interface IGiftCardPayload {
 
 export interface IGiftCard {
   product: string;
-  barcode: number;
+  barcode: string;
   date: Date;
-  order: number;
+  order: string;
 }
 
 export function createGiftCard({
@@ -17,8 +17,8 @@ export function createGiftCard({
 }: IGiftCardPayload) {
   return {
     product,
-    barcode: parseInt(barcode),
+    barcode,
     date: new Date(date),
-    order: parseInt(order),
+    order,
   };
 }
