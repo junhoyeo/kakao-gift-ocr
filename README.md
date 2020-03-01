@@ -35,7 +35,7 @@ const ignoreLogs = () => {};
 
   console.log(giftCard);
   // {
-  //   product: '순살뿌링클+콜라1.25Ｌ[',
+  //   name: '순살뿌링클+콜라1.25Ｌ[',
   //   barcode: 111420582002,
   //   dueDate: 2019-06-10T15:00:00.000Z,
   //   order: 570993632

@@ -39,12 +39,12 @@ export default class giftCardParser {
       .findIndex((line) => line.includes('교환처'));
 
     const barcode = textLines[exchangerIndex - 1];
-    const product = textLines[exchangerIndex - 2];
+    const name = textLines[exchangerIndex - 2];
 
     const dueDate = matchString(text, regexAboutFormattedDate);
     const order = matchString(text, regexAboutLongNumber);
 
-    return createGiftCard({ product, barcode, dueDate, order });
+    return createGiftCard({ name, barcode, dueDate, order });
   };
 
   public async terminate(): Promise<void> {
